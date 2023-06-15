@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc $CFILE -o $(echo $CFILE | tr 'c' 's')
