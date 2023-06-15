@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c $CFILE
+gcc -c main.c -o $(echo main.c | tr 'c' 'o')
