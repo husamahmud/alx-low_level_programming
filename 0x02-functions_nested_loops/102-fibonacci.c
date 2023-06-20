@@ -11,18 +11,18 @@
 
 int main(void)
 {
-	long n1 = 1, n2 = 2, next, i;
+	long n1 = 1, n2 = 2, next, i, counter = 2;
 
 	printf("%ld, %ld, ", n1, n2);
 
-	for (i = 0; i < 48; i++)
+	for (i = 0; i < 48; i++, counter++)
 	{
 		next = n1 + n2;
 
-		if (i != 47)
-			printf("%ld ,", next);
-		else
-			printf("%ld", next);
+		printf("%ld", next);
+
+		if (counter != 49)
+			printf(", ");
 
 		n1 = n2;
 		n2 = next;
