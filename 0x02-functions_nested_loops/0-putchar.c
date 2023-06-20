@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - Entry point
@@ -8,9 +9,10 @@
  * Return: Always 0 (Success)
  */
 
+void print_putchar(void);
+
 int main(void)
 {
-printf("_putchar\n");
-
-return (0);
+  print_putchar();
+  return (0);
 }
