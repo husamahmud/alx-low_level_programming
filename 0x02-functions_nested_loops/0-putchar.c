@@ -13,6 +13,6 @@ void print_putchar(void);
 
 int main(void)
 {
-  print_putchar();
-  return (0);
+print_putchar();
+return (0);
 }
