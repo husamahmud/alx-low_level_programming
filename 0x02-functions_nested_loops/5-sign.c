@@ -5,7 +5,7 @@
  * @n: the character to check
  *
  * Description: program that prints the sign of a number
- * 
+ *
  * Return: On greater than zero 1
  * On less than zero -1
  * On zero 0
