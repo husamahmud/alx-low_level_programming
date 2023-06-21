@@ -26,3 +26,9 @@
 - Scope of variables
 - What are the gcc flags -Wall -Werror -pedantic -Wextra -std=gnu89
 - What are header files and how to to use them with #include
+
+### 0x03. C - Debugging
+
+- What is debugging
+- What are some methods of debugging manually
+- How to read the error messages
