@@ -1,20 +1,17 @@
 #include "main.h"
 
 /**
- * positive_or_negative - function that prints the alphabet, in lowercase
+ * main - tests function that prints if integer is positive or negative
  *
- * Description: test that the function positive_or_negative()
- * gives the correct output
- *
- * @n: the character to check
+ * Return: 0
  */
 
-void positive_or_negative(int n)
+int main(void)
 {
-	if (n > 0)
-		printf("%d is positive\n", n);
-	else if (n < 0)
-		printf("%d is negative\n", n);
-	else
-		printf("0 is zero\n");
+	int i;
+
+	i = 0;
+	positive_or_negative(i);
+
+	return (0);
 }
