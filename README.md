@@ -40,3 +40,15 @@
 - What is the difference between a declaration and a definition of a function
 - What is a prototype
 - Scope of variables
+
+### 0x05. C - Pointers, arrays and strings
+
+- What are pointers and how to use them
+- What are arrays and how to use them
+- What are the differences between pointers and arrays
+- How to use strings and how to manipulate them
+- Scope of variables
+
+
+
+
