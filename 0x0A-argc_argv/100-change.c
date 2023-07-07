@@ -15,7 +15,10 @@ int main(int argc, char *argv[])
 	int coins_val[5] = {25, 10, 5, 2, 1}, min = 0, money, i;
 
 	if (argc != 2)
-		return (printf("Error\n"), 1);
+	{
+		printf("Error\n");
+		return (1);
+	}
 
 	money = atoi(argv[1]);
 	while (money)
