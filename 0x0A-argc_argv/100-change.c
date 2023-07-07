@@ -25,18 +25,34 @@ int main(int argc, char *argv[])
 	}
 
 	money = atoi(argv[1]);
-	while (money)
+	//	while (money)
+	//	{
+	//		for (i = 0; i < 5; i++)
+	//		{
+	//			if (money >= coins_val[i])
+	//			{
+	//				money -= coins_val[i];
+	//				min++;
+	//				break;
+	//			}
+	//		}
+	//	}
+
+	while (money > 0)
 	{
-		for (i = 0; i < 5; i++)
+		i = 0;
+		while (i < 5)
 		{
-			if (money >= coins_val[i])
+			if (coins_val[i] <= money)
 			{
 				money -= coins_val[i];
 				min++;
 				break;
 			}
+			i++;
 		}
 	}
+
 	printf("%d\n", min);
 
 	return (0);
