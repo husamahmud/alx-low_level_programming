@@ -12,8 +12,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, num;
-	long int sum = 0;
+	int i = 1, num, sum = 0;
 	char *p;
 
 	if (argc <= 1)
@@ -41,7 +40,7 @@ int main(int argc, char *argv[])
 		}
 		sum += num;
 	}
-	printf("%ld\n", sum);
+	printf("%d\n", sum);
 
 	return (0);
 }
