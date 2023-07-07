@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 /**
  * main - Entry point
@@ -10,7 +11,6 @@
  * Return: If one of the number contains symbols that are not digits return (1)
  * otherwise return (0)
  */
-
 int main(int argc, char *argv[])
 {
 	int coins_val[5] = {25, 10, 5, 2, 1}, min = 0, money, i;
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	money = atoi(argv[1]);
 
-	for (i = 1; i < argc; i++)
+	for (i = 0; i < (int) strlen(argv[1]); i++)
 	{
 		if (!isdigit(argv[1][i]))
 			return (printf("Error\n"), 1);
