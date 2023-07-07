@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - Entry point
@@ -15,12 +16,17 @@ int main(int argc, char *argv[])
 	int coins_val[5] = {25, 10, 5, 2, 1}, min = 0, money, i;
 
 	if (argc != 2)
-	{
 		return (printf("Error\n"), 1);
-	}
 
 	money = atoi(argv[1]);
-	while (money)
+
+	for (i = 1; i < argc; i++)
+	{
+		if (!isdigit(argv[i][i]))
+			return (printf("Error\n"), 1);
+	}
+
+	while (money > 0)
 	{
 		for (i = 0; i < 5; i++)
 		{
