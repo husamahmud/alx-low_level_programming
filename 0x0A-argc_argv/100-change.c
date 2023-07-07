@@ -13,32 +13,33 @@
  */
 int main(int argc, char *argv[])
 {
-	int coins_val[5] = {25, 10, 5, 2, 1}, min = 0, money, i;
+	int min_coins = 0, i, amount;
+	int coins_val[] = {25, 10, 5, 2, 1};
 
-	if (argc != 2)
+	if (argc != 2 || !isdigit(argv[1][0]))
 		return (printf("Error\n"), 1);
 
-	for (i = 1; i < (int) strlen(argv[1]); i++)
+	amount = atoi(argv[1]);
+
+	for (i = 0; i < (int) strlen(argv[1]); i++)
 	{
 		if (!isdigit(argv[1][i]))
 			return (printf("Error\n"), 1);
 	}
 
-	money = atoi(argv[1]);
-	while (money > 0)
+	while (amount > 0)
 	{
 		for (i = 0; i < 5; i++)
 		{
-			if (coins_val[i] <= money)
+			if (coins_val[i] <= amount)
 			{
-				money -= coins_val[i];
-				min++;
+				amount -= coins_val[i];
+				min_coins++;
 				break;
 			}
 		}
 	}
-
-	printf("%d\n", min);
+	printf("%d\n", min_coins);
 
 	return (0);
 }
