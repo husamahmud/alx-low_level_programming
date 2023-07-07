@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 			return (printf("Error\n"), 1);
 	}
 
-	while (moneyg)
+	while (money)
 	{
 		for (i = 0; i < 5; i++)
 		{
