@@ -18,15 +18,14 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 		return (printf("Error\n"), 1);
 
-	money = atoi(argv[1]);
-
-	for (i = 0; i < (int) strlen(argv[1]); i++)
+	for (i = 1; i < (int) strlen(argv[1]); i++)
 	{
 		if (!isdigit(argv[1][i]))
 			return (printf("Error\n"), 1);
 	}
 
-	while (money > 0)
+	money = atoi(argv[1]);
+	while (money)
 	{
 		for (i = 0; i < 5; i++)
 		{
@@ -38,7 +37,6 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
-
 	printf("%d\n", min);
 
 	return (0);
