@@ -70,3 +70,9 @@
 - Creating A Static “C” Library Using “ar” and “ranlib”
 - Using A “C” Library In A Program
 - What is difference between Dynamic and Static library(Static and Dynamic linking)
+
+### 0x0A. C - argc, argv
+
+- How to use arguments passed to your program
+- What are two prototypes of main that you know of, and in which case do you use one or the other
+- How to use __attribute__((unused)) or (void) to compile functions with unused variables or parameters
