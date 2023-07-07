@@ -13,14 +13,14 @@
  */
 int main(int argc, char *argv[])
 {
-	int min_coins = 0, i, amount;
-	int coins_val[] = {25, 10, 5, 2, 1};
+	int totalCoins = 0, amount, i;
+	int coinValues[] = {25, 10, 5, 2, 1};
+	int numCoinValues = sizeof(coinValues) / sizeof(coinValues[0]);
 
 	if (argc != 2 || !isdigit(argv[1][0]))
 		return (printf("Error\n"), 1);
 
 	amount = atoi(argv[1]);
-
 	for (i = 0; i < (int) strlen(argv[1]); i++)
 	{
 		if (!isdigit(argv[1][i]))
@@ -28,18 +28,17 @@ int main(int argc, char *argv[])
 	}
 
 	while (amount > 0)
-	{
-		for (i = 0; i < 5; i++)
+		for (i = 0; i < numCoinValues; i++)
 		{
-			if (coins_val[i] <= amount)
+			if (coinValues[i] <= amount)
 			{
-				amount -= coins_val[i];
-				min_coins++;
+				amount -= coinValues[i];
+				totalCoins++;
 				break;
 			}
 		}
-	}
-	printf("%d\n", min_coins);
+
+	printf("%d\n", totalCoins);
 
 	return (0);
 }
