@@ -2,9 +2,7 @@
 
 /**
  * main - Entry point
- *
  * Description: docs
- *
  * Return: Always 0 (Success)
  */
 int main(void)
