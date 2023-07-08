@@ -3,9 +3,13 @@
 /**
  * _islower - checks for lowercase character
  * @c: the character to check
- * Return: 1 if c is lowercase, 0 otherwise
+ *
+ * Description: program that checks for lowercase character
+ *
+ * Return: Always 0 (Success)
  */
+
 int _islower(int c)
 {
-	return (c >= 'a' && c <= 'z');
+	return (c >= 97 && c <= 122 ? 1 : 0);
 }
