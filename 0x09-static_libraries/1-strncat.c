@@ -1,23 +1,24 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * _strncat - Concatenates two strings up to a specified number of characters
- * @dest: A pointer to the destination string
- * @src: A pointer to the source string
- * @n: The maximum number of characters to concatenate
+ * _strncat - concatenates n bytes from a string to another
+ * @dest: destination string
+ * @src: source string
+ * @n: number of bytes of str to concatenate
  *
  * Return: a pointer to the resulting string dest
  */
-
 char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0, j = 0;
+	int i, j;
+
+	i = 0;
+	j = 0;
 
 	while (dest[i] != '\0')
 		i++;
 
-	while (j < n && src[j] != '\0')
+	while (src[j] != '\0' && j < n)
 	{
 		dest[i] = src[j];
 		i++;
