@@ -11,11 +11,12 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	int i, s1_len = 0, s2_len = 0, dest_len;
+	int i, j, s1_len, s2_len, dest_len;
 	char *dest;
 
-	if (!s1 && !s2)
-		return (NULL);
+	s1_len = 0;
+	s2_len = 0;
+	i = j = 0;
 
 	if (s1)
 		s1_len = strlen(s1);
@@ -27,12 +28,17 @@ char *str_concat(char *s1, char *s2)
 	if (dest == NULL)
 		return (NULL);
 
-	for (i = 0; i < s1_len; i++)
+	while (s1 && s1[i])
+	{
 		dest[i] = s1[i];
-	for (i = 0; i < s2_len; i++)
-		dest[i + s1_len] = s2[i];
-
-	dest[dest_len - 1] = '\0';
+		i++;
+	}
+	while (s2 && s2[j])
+	{
+		dest[i] = s2[j];
+		i++, j++;
+	}
+	dest[i] = '\0';
 
 	return (dest);
 }
