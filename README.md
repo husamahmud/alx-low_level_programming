@@ -88,3 +88,8 @@
 
 - How to use the exit function
 - What are the functions calloc and realloc from the standard library and how to use them
+
+### 0x0E. C - Structures, typedef
+
+- What are structures, when, why and how to use them
+- How to use typedef
