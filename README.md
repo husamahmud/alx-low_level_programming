@@ -89,6 +89,12 @@
 - How to use the exit function
 - What are the functions calloc and realloc from the standard library and how to use them
 
+### 0x0D. C - Preprocessor
+
+- What are macros and how to use them
+- What are the most common predefined macros
+- How to include guard your header files
+
 ### 0x0E. C - Structures, typedef
 
 - What are structures, when, why and how to use them
