@@ -10,7 +10,8 @@
  */
 int main(int argc, char *argv[])
 {
-	int (*op_ptr)(int, int), a, b;
+	int a, b;
+	char *op;
 
 	if (argc != 4)
 	{
@@ -20,21 +21,21 @@ int main(int argc, char *argv[])
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
+	op = argv[2];
 
-	op_ptr = get_op_func(argv[2]);
-	if (!op_ptr)
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
 
-	if (argv[2][1] != '\0')
+	if (b == 0)
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
 
-	printf("%d\n", op_ptr(a, b));
+	printf("%d\n", get_op_func(op)(a, b));
 
 	return (0);
 }
