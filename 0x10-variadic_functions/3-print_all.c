@@ -1,7 +1,10 @@
 #include "variadic_functions.h"
 
 /**
+ * print_all - prints anything
+ * @format: list of types of arguments passed to the function
  *
+ * Return: Nothing.
  */
 void print_all(const char *const format, ...)
 {
@@ -14,7 +17,6 @@ void print_all(const char *const format, ...)
 		len++;
 
 	va_start(args, format);
-
 
 	while (format && format[i])
 	{
