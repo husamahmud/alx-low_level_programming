@@ -22,9 +22,9 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		val = va_arg(args, char*);
-		printf("%s", val);
+		printf("%s", (val) ? val : "(nill)");
 		if (i < n - 1)
-			printf("%s", separator);
+			printf("%s", (!separator) ? separator : "");
 	}
 	printf("\n");
 
