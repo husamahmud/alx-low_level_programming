@@ -1,5 +1,12 @@
 #include "lists.h"
 
+/**
+ * add_node_end - adds a new node at the end of a list_t list
+ * @head: pointer to a pointer to the head of the linked list
+ * @str: string to be added to the linked list
+ *
+ * Return: pointer to the new node added to the linked list
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new, *ptr = NULL;
