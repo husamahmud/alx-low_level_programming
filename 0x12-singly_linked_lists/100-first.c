@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 void foo(void) __attribute__ ((constructor));
 
 /**
