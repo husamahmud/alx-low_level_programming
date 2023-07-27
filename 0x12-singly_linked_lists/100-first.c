@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 void foo(void) __attribute__ ((constructor));
 
 /**
@@ -5,6 +7,6 @@ void foo(void) __attribute__ ((constructor));
  */
 void foo(void)
 {
-	printf("You're beat! and yet, you must allow,");
+	printf("You're beat! and yet, you must allow,\n");
 	printf("nI bore my house upon my back!\n");
 }
