@@ -25,7 +25,7 @@ void free_listp2(listp_t **head)
 
 /**
  * free_listint_safe - frees a linked list
- * @head: a pointer to a pointer to the head of the list
+ * @h: a pointer to a pointer to the head of the list
  *
  * Return: size of the list that was freed
  */
