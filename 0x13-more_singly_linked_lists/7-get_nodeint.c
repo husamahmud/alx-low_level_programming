@@ -9,17 +9,19 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	listint_t *ptr = (listint_t *) malloc(sizeof(listint_t));
+	listint_t *ptr = head;
 
-	if (!ptr)
-		return (NULL);
 
-	ptr = head;
 	while (index--)
+	{
+		if (!ptr)
+			return (NULL);
+
 		ptr = ptr->next;
+	}
 
 	if (ptr == NULL)
 		return (NULL);
-	else
-		return (ptr);
+
+	return (ptr);
 }
