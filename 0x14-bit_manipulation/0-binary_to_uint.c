@@ -11,8 +11,8 @@ unsigned int binary_to_uint(const char *b)
 	int i;
 	int num = 0;
 	int digit;
-	int dec = 0;
-	int pow = 1;
+	unsigned int dec = 0;
+	unsigned int pow = 1;
 
 	if (b == NULL)
 		return (dec);
