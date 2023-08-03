@@ -1,6 +1,10 @@
 #include "main.h"
 
-
+/**
+ * _strlen - calculate the length of a string
+ *
+ * Return: the length of the string
+ */
 int _strlen(const char *s)
 {
 	int len = 0;
@@ -11,6 +15,13 @@ int _strlen(const char *s)
 	return (len);
 }
 
+/**
+ * power - calculate the power of a base to an exp
+ * @base: the base
+ * @exp: the exponent
+ *
+ * Return: the calculated power
+ */
 int power(int base, int exp)
 {
 	int i;
