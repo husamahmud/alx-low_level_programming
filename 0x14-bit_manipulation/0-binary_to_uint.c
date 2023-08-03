@@ -53,7 +53,7 @@ unsigned int binary_to_uint(const char *b)
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
 
-		dec += (b[i] - '0') * pow(2, len - i - 1);
+		dec += (b[i] - '0') * power(2, len - i - 1);
 	}
 
 	return (dec);
