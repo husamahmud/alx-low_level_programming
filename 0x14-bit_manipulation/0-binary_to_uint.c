@@ -1,5 +1,27 @@
 #include "main.h"
 
+
+int _strlen(const char *s)
+{
+	int len = 0;
+
+	while (s[len] != 0)
+		len++;
+
+	return (len);
+}
+
+int power(int base, int exp)
+{
+	int i;
+	int num = 1;
+
+	for (i = 0; i < exp; i++)
+		num += base;
+
+	return (num);
+}
+
 /**
  * binary_to_uint - converts a binary number to an unsigned int
  * @b: the binary strign to convert
@@ -8,30 +30,19 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int i;
-	int num = 0;
-	int digit;
 	unsigned int dec = 0;
-	unsigned int pow = 1;
+	int len = _strlen(b);
+	int i;
 
 	if (b == NULL)
-		return (dec);
+		return (0);
 
-	for (i = 0; b[i] != '\0'; i++)
+	for (i = len - 1; i >= 0; i--)
 	{
 		if (b[i] != '0' && b[i] != '1')
 			return (0);
-		num = num * 10 + (b[i] - '0');
-	}
 
-	i = 0;
-	while (num != 0)
-	{
-		digit = num % 10;
-		num /= 10;
-		dec += digit * pow;
-		i++;
-		pow *= 2;
+		dec += (b[i] - '0') * pow(2, len - i - 1);
 	}
 
 	return (dec);
