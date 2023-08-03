@@ -12,9 +12,10 @@ unsigned int binary_to_uint(const char *b)
 	int num = 0;
 	int digit;
 	int dec = 0;
+	int pow = 1;
 
 	if (b == NULL)
-		return (0);
+		return (dec);
 
 	for (i = 0; b[i] != '\0'; i++)
 	{
@@ -29,8 +30,9 @@ unsigned int binary_to_uint(const char *b)
 	{
 		digit = num % 10;
 		num /= 10;
-		dec += digit * pow(2, i);
+		dec += digit * pow;
 		i++;
+		pow *= 2;
 	}
 
 	return (dec);
