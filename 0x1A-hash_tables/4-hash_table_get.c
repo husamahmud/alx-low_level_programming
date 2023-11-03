@@ -9,6 +9,7 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int idx;
+	hash_node_t *node;
 
 	/* check for invalid input params */
 	if (ht == NULL || key == NULL)
@@ -17,10 +18,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	/* calc the index for the key */
 	idx = key_index((const unsigned char *) key, ht->size);
 
-	/* check if the key is found in the hash table */
-	if (ht->array[idx] != NULL && ht->array[idx]->value != NULL)
-		return (ht->array[idx]->value);
+	/* traverse the linked list at the calculated index */
+	node = ht->array[idx];
+	while (node && strcmp(node->key, key) != 0)
+		node = node->next;
 
-	/* key is not in the hash table */
-	return (NULL);
+	/* key not found in hash table */
+	if (node == NULL)
+		return (NULL);
+
+	/* return the val associated with the key */
+	return (node->value);
 }
