@@ -46,7 +46,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int idx;
 
 	/* check for invalid input params */
-	if (ht == NULL || key == NULL || key[0] == '\0' || value == NULL)
+	if (ht == NULL || key == NULL || value == NULL)
 		return (0);
 
 	/* calc the index for the key */
