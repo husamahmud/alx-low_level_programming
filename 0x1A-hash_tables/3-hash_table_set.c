@@ -57,7 +57,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new_node;
 	hash_node_t *curr;
 
-	if (ht == NULL || key[0] == '\0')
+	if (ht == NULL || key[0] == '\0' || value == NULL)
 		return (0);
 
 	/* create a new node for the key/val pair */
