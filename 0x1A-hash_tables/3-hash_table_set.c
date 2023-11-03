@@ -33,17 +33,6 @@ hash_node_t *create_hash_node(const char *key, const char *value)
 }
 
 /**
- * free_node - Frees memory allocated by a hash node.
- * @node: The hash node to be freed.
- **/
-void free_node(hash_node_t *node)
-{
-	free(node->key);
-	free(node->value);
-	free(node);
-}
-
-/**
  * hash_table_set - Adds or updates a key/value pair in the hash table.
  * @ht: The hash table.
  * @key: The key to be inserted or updated.
@@ -52,42 +41,33 @@ void free_node(hash_node_t *node)
  **/
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	/* calc the index of the key */
-	unsigned long int idx = key_index((const unsigned char *) key, ht->size);
+	hash_node_t *node;
 	hash_node_t *new_node;
-	hash_node_t *curr;
+	unsigned long int idx;
 
-	if (ht == NULL || key[0] == '\0' || value == NULL)
+	if (ht == NULL || key == NULL || key[0] == '\0' || value == NULL)
 		return (0);
 
-	/* create a new node for the key/val pair */
+	idx = key_index((const unsigned char *) key, ht->size);
+	node = ht->array[idx];
+	while (node != NULL)
+	{
+		if (strcmp(node->key, key) == 0)
+		{
+			free(node->value);
+			node->value = strdup(value);
+			if (node->value == NULL)
+				return (0);
+			return (1);
+		}
+		node = node->next;
+	}
+
 	new_node = create_hash_node(key, value);
 	if (new_node == NULL)
 		return (0);
 
-	/* check for the index is empty */
-	if (ht->array[idx] == NULL)
-	{
-		ht->array[idx] = new_node;
-		return (1);
-	}
-
-	/* handle collision by chaining */
-	curr = ht->array[idx];
-	while (curr->next != NULL)
-	{
-		/* if the key already exist, update the value */
-		if (strcmp(curr->key, key) == 0)
-		{
-			free(curr->value);
-			curr->value = strdup(value);
-			free_node(new_node);
-			return (1);
-		}
-		curr = curr->next;
-	}
-
-	/* add the new node at the end of the linked list */
-	curr->next = new_node;
+	new_node->next = ht->array[idx];
+	ht->array[idx] = new_node;
 	return (1);
 }
