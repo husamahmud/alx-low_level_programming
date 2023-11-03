@@ -12,7 +12,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	/* check for invalid input params */
 	if (ht == NULL || key == NULL)
-		return (0);
+		return (NULL);
 
 	/* calc the index for the key */
 	idx = key_index((const unsigned char *) key, ht->size);
