@@ -1,4 +1,15 @@
-# alx-low_level_programming
+# Low-level programming
+
+<img alt="logo.png" src="logo.png"/>
+
+### Data structures, algorithms, Linux/Unix system programming and scripting
+
+> This repository is a collection of programs created for the low-level
+> programming and algorithm track in the ALX Software Engineering Program.
+> Throughout these projects, I gained knowledge and experience in various
+> aspects of low-level programming, including data structures, algorithms, and
+> other fundamental concepts. The projects were implemented using the C
+> programming language.
 
 - [0x00. C - Hello, World](0x00-hello_world)
 - [0x01. C - Variables, if, else, while](0x01-variables_if_else_while)
@@ -30,3 +41,8 @@
 - [0x1B. C - Sorting algorithms & Big O](https://github.com/husamahmud/sorting_algorithms)
 - [0x1C. C - Makefiles](0x1C-makefiles)
 - [0x1D. C - Binary trees](https://github.com/husamahmud/binary_trees)
+- [0x1E. C - Search Algorithms](0x1E-search_algorithms%2FREADME.md)
+
+### Author
+
+- [Hüsam](https://twitter.com/husamahmud/)
