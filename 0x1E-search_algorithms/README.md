@@ -1,4 +1,8 @@
 # 0x1E. C - Search Algorithms
+n square -> O(n^2)
+sqrt n -> O(sqrt(n))
+log(n) -> O(log(n))
+n * log(n) -> O(nlog(n))
 
 ## Resources
 
